@@ -1,14 +1,18 @@
 ---
-import Header from '../modules/Header/Header.astro';
-import Layout from '../layouts/Layout.astro';
-import Home from '../modules/Home/Home.astro';
-import Carrusel from '../modules/Home/components/Carrusel';
+import Header from "../modules/Header/Header.astro";
+import Layout from "../layouts/Layout.astro";
+import Home from "../modules/Home/Home.astro";
 ---
 
 <Layout title="Ambu Virtual">
-	<Header/>
-	<main>
-		<Home/>
-		<Carrusel/>
-	</main>
+  <Header />
+  <main>
+    <Home />
+  </main>
 </Layout>
+
+<style>
+  main{
+    height: 200%;
+  }
+</style>

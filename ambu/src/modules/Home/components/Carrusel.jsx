@@ -1,24 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 
-import img1 from "../../../assets/img/carrusel/img1.jpg";
-import img2 from "../../../assets/img/carrusel/img2.jpg";
-
-const Carrusel = () => {
+const Carrusel = ({ slides }) => {
   const [contador, setContador] = useState(0);
   const [width, setWidth] = useState(0);
   const [sliderRef, setSliderRef] = useState(null);
-  const slides = [
-    {
-      image: img1,
-      content: "TU SALUD ES NUESTRA PRIORIDAD",
-      p: "Tene la seguridad de estar protegido tanto vos como tu familia, desde el integrante mas pequeño",
-    },
-    {
-      image: img2,
-      content: "GESTIONA TUS CONSULTAS DESDE CASA",
-      p: "Te ofrecemos el mejor asesoramiento a traves de nuestros canales de atencion con respuesta inmediata",
-    },
-  ];
 
   const moveCarousel = (index) => {
     const transformValue = -width * index + "px";
@@ -99,31 +84,10 @@ const Carrusel = () => {
   };
 
   return (
-    <div className="contenedor">
+    <section className="slider">
       <div className="flechas">
-        <div className="flechaDer" onClick={handlePreviousSlide}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-chevron-right"
-            width="44"
-            height="44"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M9 6l6 6l-6 6" />
-          </svg>
-        </div>
-        <div className="flechaDer" onClick={handleNextSlide}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-chevron-left"
-            width="44"
-            height="44"
+        <div className="flecha" onClick={handlePreviousSlide}>
+        <svg
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
@@ -133,6 +97,19 @@ const Carrusel = () => {
           >
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M15 6l-6 6l6 6" />
+          </svg>
+        </div>
+        <div className="flecha" onClick={handleNextSlide}>
+        <svg
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M9 6l6 6l-6 6" />
           </svg>
         </div>
       </div>
@@ -154,7 +131,7 @@ const Carrusel = () => {
               </p>
             </div>
             <div className="contenedorImg">
-              {/* <img src={slide.image} alt={`Slide ${index + 1}`} /> */}
+              <img src={slide.image} alt={`Imagen del ambu ${index + 1}`} />
             </div>
           </section>
         ))}
@@ -162,7 +139,7 @@ const Carrusel = () => {
       <div className="contendorPuntos">
         <div className="puntos-indicadores">{generatePuntosIndicadores()}</div>
       </div>
-    </div>
+    </section>
   );
 };
 
