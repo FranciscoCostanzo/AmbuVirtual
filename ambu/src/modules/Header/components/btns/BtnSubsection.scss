@@ -73,3 +73,52 @@
 
 
 }
+
+@media (max-width: 1400px) {
+    .btn__subsection {
+        p {
+            padding: 2px;
+            font-size: 17px;
+        }
+        div {
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        .open {
+            gap: 10px;
+            padding: 6px;
+            a {
+                font-size: 16px; 
+            }
+        }
+    }
+}
+
+@media (max-width: 1150px) {
+    .btn__subsection {
+        p {
+            font-size: 15px;
+        }
+        div {
+            svg {
+                width: 15px;
+                height: 15px;
+            }
+        }
+        .open {
+            gap: 9px;
+            padding: 5px;
+            a {
+                font-size: 13px; 
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .btn__subsection {
+        display: none;
+    }
+}
