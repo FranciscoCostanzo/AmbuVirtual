@@ -18,23 +18,28 @@ const { title } = Astro.props;
       type="image/x-icon"
     />
     <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
     <title>{title}</title>
   </head>
-  <body>
-      <slot />
+  <body class="josefin_sans">
+    <slot />
   </body>
   <style is:global>
-    @font-face {
-      font-family: "josefin";
-      src: url("../assets/fonts/JosefinSans-Bold.ttf") format("truetype");
+    .josefin_sans {
+      font-family: "Josefin Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
     }
 
     * {
-      font-family: josefin;
       padding: 0;
       margin: 0;
       box-sizing: border-box;
     }
-
   </style>
 </html>

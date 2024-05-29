@@ -1,18 +1,86 @@
 ---
-import Header from "../modules/Header/Header.astro";
 import Layout from "../layouts/Layout.astro";
-import Home from "../modules/Home/Home.astro";
+import Header from "../modules/Header/Header.astro";
 ---
 
 <Layout title="Ambu Virtual">
   <Header />
-  <main>
-    <Home />
-  </main>
+  <div class="container" id="home">
+    <h2>Bienvenido a Ambu Virtual</h2>
+    <p>
+      En Ambu Virtual, ofrecemos servicios de rehabilitación de adicciones a
+      distancia, ayudando a las personas a recuperar su vida desde la comodidad
+      de su hogar.
+    </p>
+  </div>
+  <div class="container" id="about-us">
+    <h2>Sobre Nosotros</h2>
+    <p>
+      Ambu Virtual es una empresa dedicada a la rehabilitación de adicciones.
+      Nuestro objetivo es proporcionar un apoyo integral y accesible para
+      aquellas personas que buscan recuperarse y vivir una vida plena.
+    </p>
+  </div>
+  <div class="container how-it-works" id="how-it-works">
+    <h2>Cómo Funciona Nuestro Tratamiento</h2>
+    <p>
+      Nuestro tratamiento se basa en terapias en línea y seguimiento
+      personalizado. Utilizamos la última tecnología para asegurarnos de que
+      nuestros pacientes reciban el mejor apoyo posible, sin importar dónde se
+      encuentren.
+    </p>
+  </div>
+  <div class="container testimonials" id="testimonials">
+    <h2>Testimonios</h2>
+    <p>
+      "Ambu Virtual me ayudó a recuperar mi vida. La atención y el apoyo que
+      recibí fueron excepcionales." - Juan P.
+    </p>
+    <p>
+      "Gracias a Ambu Virtual pude superar mi adicción sin tener que dejar mi
+      casa. Estoy eternamente agradecido." - María G.
+    </p>
+  </div>
+  <div class="container contact-info" id="contact">
+    <h2>Contacto</h2>
+    <p>
+      Si necesitas ayuda o tienes alguna pregunta, no dudes en contactarnos.
+    </p>
+    <p><strong>Teléfono:</strong> +54 9 11 3216-4212</p>
+    <p>
+      <strong>Instagram:</strong>
+      <a href="https://www.instagram.com/ambuvirtual" target="_blank"
+        >@ambuvirtual</a
+      >
+    </p>
+  </div>
+  <footer>
+    <p>&copy; 2024 Ambu Virtual. Todos los derechos reservados.</p>
+  </footer>
 </Layout>
 
-<style>
-  main {
-    height: 200%;
+<style lang="scss">
+  .container {
+    padding: 2em;
+  }
+  h1,
+  h2 {
+    color: #4caf50;
+  }
+  footer {
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+  }
+  .testimonials,
+  .how-it-works {
+    background-color: #e8f5e9;
+    padding: 2em;
+    margin-top: 2em;
+    border-radius: 8px;
+  }
+  .contact-info {
+    margin-top: 2em;
   }
 </style>

@@ -1,186 +1,245 @@
 ---
-// css
-import "./components/btns/BtnSubsection.scss";
-import "./components/Menu/Menuburger.scss";
 
-import BtnSubsection from "./components/btns/BtnSubsection.jsx";
-import Menuburger from "./components/Menu/Menuburger.jsx";
-
-const subsectionNosotros = [
-  { txt: "Nuestros profesionales", href: "/about" },
-  { txt: "¿Cómo iniciamos?", href: "/about" },
-];
-const subsectionTratamiento = [
-  { txt: "¿Cómo funciona?", href: "/about" },
-  { txt: "Testimonios", href: "/about" },
-];
 ---
 
 <header>
-  <section class="contacto__desk">
-    <a
-      href="https://api.whatsapp.com/send?phone=5491132164212&text=Necesito%20ayuda"
-      target="_blank"
-      rel="noopener noreferrer"
-      >Numero de contacto Ivo Cutzarida: +5491132164212</a
-    >
-    <a
-      href="https://api.whatsapp.com/send?phone=5492317445068&text=Necesito%20ayuda"
-      target="_blank"
-      rel="noopener noreferrer"
-      >Numero de contacto Lorena Appella: +5492317445068</a
-    >
-  </section>
-  <section class="contacto__mobile">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="icon icon-tabler icon-tabler-user"
-      width="44"
-      height="44"
-      viewBox="0 0 24 24"
-      stroke-width="1.5"
-      stroke="#2c3e50"
-      fill="none"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-      <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
-      <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-    </svg>
-  </section>
+  <h1>Ambu Virtual</h1>
+  <h2>Rehabilitación de Adicciones</h2>
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
   <nav>
-    <BtnSubsection
-      client:visible
-      txt="Nosotros"
-      subsections={subsectionNosotros}
-    />
-    <BtnSubsection
-      client:visible
-      txt="Tratamiento"
-      subsections={subsectionTratamiento}
-    />
-    <a href="">Arancelado</a>
-    <a href="">Preguntas Frecuentes</a>
+    <div class="menu" id="menu">
+      <a href="#home">Home</a>
+      <a href="#about-us">Sobre Nosotros</a>
+      <a href="#how-it-works">Cómo Funciona</a>
+      <a href="#testimonials">Testimonios</a>
+      <a href="#contact">Contacto</a>
+    </div>
   </nav>
-  <Menuburger client:visible />
 </header>
 
-<style lang="scss">
-  .contacto__desk {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-
-    a {
-      font-size: 20px;
-      color: #fff;
+<script>
+  document.getElementById("hamburger").addEventListener("click", function () {
+    var menu = document.getElementById("menu");
+    if (menu.classList.contains("open")) {
+      menu.classList.remove("open");
+    } else {
+      menu.classList.add("open");
     }
-  }
-  .contacto__mobile {
-    display: none;
-  }
+  });
+</script>
 
+<!-- <style lang="scss">
   header {
-    padding: 10px;
     background-color: #2b561a;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #fff;
+    color: white;
+    padding: 15px;
+    text-align: center;
 
-    nav {
-      display: flex;
-      gap: 50px;
-      padding: 10px;
-
-      a {
-        font-size: 20px;
-        padding: 3px;
-        color: #fff;
-        text-decoration: none;
-      }
-    }
-  }
-
-  @media (max-width: 1400px) {
-    .contacto__desk {
-      gap: 9px;
-      padding: 9px;
-
-      a {
-        font-size: 17px;
-      }
-    }
-
-    header {
-      padding: 9px;
-      nav {
-        gap: 45px;
-        padding: 9px;
-
-        a {
-          font-size: 17px;
-          padding: 2px;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 1150px) {
-    .contacto__desk {
-      gap: 8px;
-      padding: 8px;
-
-      a {
-        font-size: 15px;
-      }
-    }
-
-    header {
-      padding: 8px;
-      nav {
-        gap: 40px;
-        padding: 8px;
-
-        a {
-          font-size: 15px;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 1000px) {
-    .contacto__desk {
+    .hamburger {
       display: none;
     }
-    .contacto__mobile {
-      display: grid;
-    }
 
-    header {
-      nav {
-        display: none;
+    h1 {
+      font-size: 40px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      .menu {
+        padding: 20px;
+        display: flex;
+        max-height: 0;
+        transition: 0.2s ease-in-out;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        border-radius: 8px;
         a {
+          position: relative;
+          color: white;
+          padding: 15px 20px;
+          text-decoration: none;
+          text-align: center;
+          transition: 0.2s ease-in-out;
+          &:hover {
+            background-color: #45a049;
+          }
+        }
+
+        a::before {
+          content: " ";
+          border-bottom: 1px #fff solid;
+          position: absolute;
+          width: 0;
+          top: 38px;
+          left: 0;
+          transition: 0.2s ease-in-out;
+        }
+
+        a:hover::before {
+          width: 100%;
         }
       }
     }
   }
+  @media (max-width: 780px) {
+    .menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease-in-out;
+        width: 100%;
+        background-color: #357b19;
+        border-radius: 8px;
 
-  @media (max-width: 470px) {
-    .contacto__desk {
-      a {
-        font-size: 10px;
-      }
-    }
+        a::before {
+          display: none;
+        }
 
-    header {
-      nav {
-        display: none;
         a {
+          width: 90%;
+          text-align: center;
+          text-decoration: none;
+          color: #fff;
+          padding: 10px;
+          text-align: left;
+
+          &:hover {
+            scale: 1.1;
+            background-color: #2b561a;
+            border-radius: 8px;
+          }
         }
       }
+    header {
+      position: relative;
+      h2 {
+        padding: 10px;
+      }
+      .hamburger {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: 14px 20px;
+        box-sizing: border-box;
+        div {
+          width: 25px;
+          height: 2px;
+          background-color: white;
+          margin: 4px 0;
+        }
+      }
+
+
+      .menu.open {
+        max-height: 300px;
+      }
+    }
+  }
+</style> -->
+
+<style>
+  header {
+    background-color: #2b561a;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+  }
+  header h1 {
+    font-size: 40px;
+  }
+  header h2 {
+    font-size: 20px;
+    padding: 10px;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  nav .menu__desk a {
+    color: white;
+    padding: 20px 20px;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.2s ease-in-out;
+    position: relative;
+  }
+  nav .menu__desk a:hover {
+    background-color: #45a049;
+  }
+  nav .menu__desk a::before {
+    content: " ";
+    border-bottom: 1px #fff solid;
+    position: absolute;
+    width: 0;
+    top: 43px;
+    left: 0;
+    transition: 0.2s ease-in-out;
+  }
+  nav .menu__desk a:hover::before {
+    width: 100%;
+  }
+  nav .menu {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: #357b19;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-in-out;
+  }
+  nav .menu a {
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+  }
+  nav .menu.open {
+    display: flex;
+    max-height: 300px;
+  }
+  .hamburger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 14px 20px;
+  }
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+  }
+  @media (max-width: 768px) {
+    nav .menu__desk {
+      display: none;
+    }
+    .hamburger {
+      display: flex;
     }
   }
 </style>
