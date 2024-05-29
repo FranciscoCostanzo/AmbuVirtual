@@ -8,6 +8,7 @@ display: none;
 
 @media (max-width: 1000px) {
     #burger{
+        margin-right: 5%;
         display: grid;
         place-items: center;
         cursor: pointer;
@@ -54,6 +55,51 @@ display: none;
                 stroke: #fff;
                 width: 50px;
                 height: 50px;
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    #burger{
+        width: 40px;
+        height: 40px;
+    
+        .icon__burger{
+            width: 30px;
+            height: 30px;
+        }   
+    }
+    
+    #menu__burger{
+        left: 90%;
+        a{
+            padding: 14px;
+            font-size: 18px;
+        }
+        .btn__salir{
+            left: 52%;
+            top: 2%;
+            .x__icon{
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}
+
+@media (max-width: 470px) {
+    #menu__burger{
+        left: 90%;
+        a{
+            padding: 15px;
+            font-size: 16px;
+        }
+        .btn__salir{
+            left: 45%;
+            .x__icon{
+                width: 40px;
+                height: 40px;
             }
         }
     }
