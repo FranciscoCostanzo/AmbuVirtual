@@ -1,0 +1,165 @@
+---
+import lore from "../../assets/img/profesionales/lore.jpg";
+import ivo from "../../assets/img/profesionales/ivo.jpg";
+---
+
+<section id="contact" class="contact-container">
+  <button class="cta-button">Pedí Ayuda</button>
+  <p class="disclaimer">
+    No se atienden urgencias ni se ofrece internación. <br /> Contacto exclusivo
+    para consultas y asesoramiento.
+  </p>
+  <div class="contact-details">
+    <div class="contact-card">
+      <img src={ivo.src} alt="Ivo Cutzarida" />
+      <h3>Ivo Cutzarida</h3>
+      <p>+54 9 11 3216-4212</p>
+      <a
+        href="https://api.whatsapp.com/send?phone=5491132164212"
+        class="whatsapp-link"
+        target="_blank">Contactar por WhatsApp</a
+      >
+    </div>
+    <div class="contact-card">
+      <img src={lore.src} alt="Lorena Mabel Apella" />
+      <h3>Lorena Mabel Apella</h3>
+      <p>+54 9 2317 44-5068</p>
+      <a
+        href="https://api.whatsapp.com/send?phone=5492317445068"
+        class="whatsapp-link"
+        target="_blank">Contactar por WhatsApp</a
+      >
+    </div>
+  </div>
+  <a
+    href="https://www.instagram.com/ambuvirtual"
+    class="instagram-link"
+    target="_blank"
+    >Visita nuestro Instagram <br />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon icon-tabler icon-tabler-brand-instagram"
+      width="44"
+      height="44"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="#ffffff"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path
+        d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"
+      ></path>
+      <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+      <path d="M16.5 7.5l0 .01"></path>
+    </svg></a
+  >
+</section>
+
+<style>
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+    color: #333;
+    text-align: center;
+  }
+
+  .cta-button {
+    background-color: #45a049;
+    color: #fff;
+    font-size: 20px;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .cta-button:hover {
+    background-color: #357b19;
+  }
+
+  .disclaimer {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .contact-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+  }
+
+  .contact-card img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+
+  .contact-card h3 {
+    font-size: 20px;
+    color: #2b561a;
+    margin-bottom: 10px;
+  }
+
+  .contact-card p {
+    font-size: 16px;
+    color: #333;
+  }
+
+  .contact-card .whatsapp-link {
+    color: #45a049;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .contact-card .whatsapp-link:hover {
+    color: #357b19;
+  }
+
+  .instagram-link {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #45a049;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .instagram-link:hover {
+    color: #357b19;
+  }
+
+  .instagram-link svg {
+    stroke: #357b19;
+  }
+
+  @media (max-width: 768px) {
+    .contact-details {
+      flex-direction: column;
+    }
+
+    .contact-card {
+      width: 100%;
+    }
+  }
+</style>
