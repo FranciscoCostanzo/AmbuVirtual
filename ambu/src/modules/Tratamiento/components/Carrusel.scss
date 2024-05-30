@@ -1,0 +1,183 @@
+.slider {
+    width: 100%;
+    overflow: hidden;
+
+    .flechas {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        top: 18rem;
+        height: 0;
+        z-index: 1;
+
+        .flecha {
+            cursor: pointer;
+            margin-right: 20px;
+
+            svg {
+                stroke: #2b561a;
+                stroke-width: 2px;
+                stroke-linecap: round;
+                height: 60px;
+                width: 60px;
+            }
+        }
+    }
+
+    .slider-contenedor {
+        width: 100%;
+        display: flex;
+
+        .contenido-slider {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            flex-shrink: 0;
+            z-index: -1;
+
+            .contenedorTxt {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 20px;
+                color: #fff;
+
+                .texto-entrada {
+                    opacity: 0;
+                    transform: translateY(10rem);
+                    transition: opacity 2s, transform 1.4s;
+                }
+
+                .texto-entrada.activo {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+                .pausado .texto-entrada {
+                    transition: none;
+                }
+
+                h2 {
+                    font-weight: 500;
+                    padding: 20px;
+                    background-color: #2b561a;
+                    font-size: 30px;
+                    width: auto;
+                    border-radius: 8px;
+                    text-align: center;
+                }
+
+                p {
+                    text-shadow: 0 0 30px #000000;
+                    font-size: 26px;
+                    width: 400px;
+                    font-weight: bold;
+                    text-align: center;
+                }
+            }
+
+            .contenedorImg {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    .contendorPuntos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .puntos-indicadores {
+            display: flex;
+            gap: 7px;
+            position: relative;
+            bottom: 60px;
+            height: 0;
+
+            .punto {
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background-color: #96b197ae;
+                margin: 0 5px;
+                cursor: pointer;
+                transition: 1s ease;
+
+                &.activo {
+                    background-color: #2b561a;
+                    scale: 1.2;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .slider {
+        .flechas {
+            top: 15rem;
+        }
+        .slider-contenedor {
+            .contenido-slider {
+                height: 500px;
+                .contenedorTxt {
+                    gap: 10px;
+                    h2 {
+                        padding: 15px;
+                        font-size: 20px;
+                    }
+                    p {
+                        font-size: 18px;
+                        width: 300px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 460px) {
+    .slider {
+        .flechas {
+            top: 15rem;
+            .flecha {
+                svg {
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+        }
+        .slider-contenedor {
+            .contenido-slider {
+                height: 500px;
+                .contenedorTxt {
+                    gap: 10px;
+                    h2 {
+                        padding: 15px;
+                        font-size: 20px;
+                    }
+                    p {
+                        color: #000;
+                        font-size: 18px;
+                        width: 300px;
+                        text-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+}

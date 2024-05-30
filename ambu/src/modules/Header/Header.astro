@@ -1,5 +1,4 @@
 ---
-
 ---
 
 <header>
@@ -12,63 +11,77 @@
   </div>
   <nav>
     <div class="menu" id="menu">
-      <a href="#home">Home</a>
-      <a href="#about-us">Sobre Nosotros</a>
-      <a href="#how-it-works">Cómo Funciona</a>
-      <a href="#testimonials">Testimonios</a>
-      <a href="#contact">Contacto</a>
+      <a href="#tratamiento">Nuestro Tratamiento</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#nosotros">Sobre Nosotros</a>
+      <a id="contacto" href="#contact">Contacto</a>
     </div>
   </nav>
 </header>
 
 <script>
-  document.getElementById("hamburger").addEventListener("click", function () {
-    var menu = document.getElementById("menu");
-    if (menu.classList.contains("open")) {
-      menu.classList.remove("open");
+  function toggleMenu() {
+    var menu = document.getElementById('menu');
+    if (menu.style.display === 'flex') {
+      menu.style.display = 'none';
     } else {
-      menu.classList.add("open");
+      menu.style.display = 'flex';
     }
-  });
+  }
+
+  function handleResize() {
+    var menu = document.getElementById('menu');
+    var hamburger = document.getElementById('hamburger');
+    if (window.innerWidth > 768) {
+      menu.style.display = 'flex';
+      hamburger.style.display = 'none';
+    } else {
+      menu.style.display = 'none';
+      hamburger.style.display = 'flex';
+    }
+  }
+
+  document.getElementById('hamburger').addEventListener('click', toggleMenu);
+  window.addEventListener('resize', handleResize);
+
+  handleResize();
 </script>
 
-<!-- <style lang="scss">
+<style lang="scss">
   header {
     background-color: #2b561a;
     color: white;
-    padding: 15px;
+    padding: 20px;
+    padding-top: 25px;
     text-align: center;
+
+    h1 {
+      font-size: 40px;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
 
     .hamburger {
       display: none;
     }
 
-    h1 {
-      font-size: 40px;
-    }
-    h2 {
-      font-size: 20px;
-    }
     nav {
       display: flex;
       justify-content: center;
       position: relative;
       .menu {
         padding: 20px;
-        display: flex;
-        max-height: 0;
-        transition: 0.2s ease-in-out;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        border-radius: 8px;
         a {
+          font-size: 20px;
           position: relative;
           color: white;
           padding: 15px 20px;
           text-decoration: none;
           text-align: center;
           transition: 0.2s ease-in-out;
+          border-radius: 4px;
           &:hover {
             background-color: #45a049;
           }
@@ -87,18 +100,52 @@
         a:hover::before {
           width: 100%;
         }
+
+        #contacto{
+          display: grid;
+          place-items: center;
+          text-align: center;
+          color: #fff;
+          padding: 10px;
+          border-radius: 8px;
+          border: 1px solid #fff;
+        }
       }
     }
   }
-  @media (max-width: 780px) {
-    .menu {
+
+  @media (max-width: 768px) {
+    header {
+      position: relative;
+
+      h2 {
+        padding: 10px;
+      }
+
+      .hamburger {
+        position: absolute;
+        top: 0;
+        right: 0;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
+        padding: 14px 20px;
+        box-sizing: border-box;
+        div {
+          width: 25px;
+          height: 2px;
+          background-color: white;
+          margin: 4px 0;
+        }
+      }
+
+      .menu {
+        display: none;
         flex-direction: column;
-        overflow: hidden;
-        max-height: 0;
-        transition: max-height 0.5s ease-in-out;
+        align-items: center;
+        justify-content: center;
         width: 100%;
         background-color: #357b19;
         border-radius: 8px;
@@ -122,124 +169,19 @@
           }
         }
       }
+    }
+  }
+
+  @media (max-width: 420px) {
     header {
-      position: relative;
+
+      h1{
+        font-size: 26px;
+      }
       h2 {
-        padding: 10px;
+        font-size: 16px;
+        padding: 8px;
       }
-      .hamburger {
-        position: absolute;
-        top: 0;
-        right: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        padding: 14px 20px;
-        box-sizing: border-box;
-        div {
-          width: 25px;
-          height: 2px;
-          background-color: white;
-          margin: 4px 0;
-        }
-      }
-
-
-      .menu.open {
-        max-height: 300px;
-      }
-    }
-  }
-</style> -->
-
-<style>
-  header {
-    background-color: #2b561a;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    position: relative;
-  }
-  header h1 {
-    font-size: 40px;
-  }
-  header h2 {
-    font-size: 20px;
-    padding: 10px;
-  }
-  nav {
-    display: flex;
-    justify-content: center;
-    position: relative;
-  }
-  nav .menu__desk a {
-    color: white;
-    padding: 20px 20px;
-    text-decoration: none;
-    text-align: center;
-    transition: 0.2s ease-in-out;
-    position: relative;
-  }
-  nav .menu__desk a:hover {
-    background-color: #45a049;
-  }
-  nav .menu__desk a::before {
-    content: " ";
-    border-bottom: 1px #fff solid;
-    position: absolute;
-    width: 0;
-    top: 43px;
-    left: 0;
-    transition: 0.2s ease-in-out;
-  }
-  nav .menu__desk a:hover::before {
-    width: 100%;
-  }
-  nav .menu {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    background-color: #357b19;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.5s ease-in-out;
-  }
-  nav .menu a {
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-    padding: 10px;
-    text-align: left;
-  }
-  nav .menu.open {
-    display: flex;
-    max-height: 300px;
-  }
-  .hamburger {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 14px 20px;
-  }
-  .hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 4px 0;
-  }
-  @media (max-width: 768px) {
-    nav .menu__desk {
-      display: none;
-    }
-    .hamburger {
-      display: flex;
     }
   }
 </style>
