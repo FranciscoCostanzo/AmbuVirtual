@@ -78,6 +78,7 @@
           position: relative;
           color: white;
           padding: 15px 20px;
+          margin: 5px;
           text-decoration: none;
           text-align: center;
           transition: 0.2s ease-in-out;
@@ -110,6 +111,21 @@
           border-radius: 8px;
           border: 1px solid #fff;
         }
+
+        #contacto::before {
+          content: " ";
+          border-bottom: 1px #fff solid;
+          position: absolute;
+          width: 0;
+          top: 38px;
+          left: 0;
+          transition: 0.2s ease-in-out;
+        }
+
+        #contacto:hover::before {
+          width: 0;
+        }
+        
       }
     }
   }
