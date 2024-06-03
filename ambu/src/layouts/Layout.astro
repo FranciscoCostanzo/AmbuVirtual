@@ -4,17 +4,25 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const description = "Ambu Virtual, un centro innovador en la rehabilitación de adicciones con terapias virtuales y presenciales. Apoyo integral para adictos y sus familias. ¡Contáctanos hoy!"
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="rehabilitación, adicciones, terapia virtual, apoyo familiar, encuentros presenciales" />
+    <meta name="author" content="Ambu Virtual" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.ambuvirtual.com" />
+    <meta property="og:image" content="https://www.ambuvirtual.com/og-image.jpg" />
     <link
       rel="shortcut icon"
-      href="../../public/favicon.svg"
+      href="./favicon.svg"
       type="image/x-icon"
     />
     <meta name="generator" content={Astro.generator} />
