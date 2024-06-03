@@ -1,9 +1,9 @@
 ---
 import "./components/Carrusel.scss";
-import Carrusel from "./components/Carrusel"
-import img1 from "../../assets/img/carrusel/img1.jpg";
-import img2 from "../../assets/img/carrusel/img2.jpg";
-import img3 from "../../assets/img/carrusel/img3.jpg";
+import Carrusel from "./components/Carrusel";
+import img1 from "../../assets/img/carrusel/img1.webp";
+import img2 from "../../assets/img/carrusel/img2.webp";
+import img3 from "../../assets/img/carrusel/img3.webp";
 const slides = [
   {
     image: img1.src,
@@ -24,65 +24,98 @@ const slides = [
 ---
 
 <section id="tratamiento" class="steps-container">
-    <div class="step">
-      <h3>Grupos Virtuales</h3>
-      <p>
-        Los grupos virtuales se llevan a cabo a las 20:00 horas los lunes y jueves. Estos encuentros brindan un espacio seguro y de apoyo para que los adictos puedan compartir sus dolores, impulsos, ansiedades y cómo ha sido su día. Los participantes reciben devoluciones tanto de sus compañeros como de profesionales, facilitando un proceso de recuperación colectiva y personal.
-      </p>
-    </div>
-    <div class="step">
-      <h3>Terapia Familiar</h3>
-      <p>
-        La terapia familiar se realiza virtualmente los miércoles a las 20:00 horas. Este espacio está diseñado para que los familiares de los adictos puedan explorar las causas de sus propios dolores y comprender cómo estos afectan el ambiente familiar. A través de estas sesiones, se busca fortalecer las relaciones familiares y proporcionar herramientas para un apoyo mutuo más efectivo.
-      </p>
-    </div>
-    <div class="step">
-      <h3>Encuentros Presenciales</h3>
-      <p>
-        Los encuentros presenciales se llevan a cabo una vez al mes y son eventos donde se practica la cortesía, el altruismo y la ayuda mutua. Durante estos encuentros, se realizan actividades terapéuticas diseñadas para fortalecer los vínculos entre los participantes y promover un ambiente de solidaridad y apoyo.
-      </p>
-    </div>
-  </section>
-  <Carrusel slides={slides} client:visible/>
+  <h2>Nuestro Tratamiento</h2>
+  <p>
+    Nuestro tratamiento virtual se divide en cuatro partes importantes, cada una diseñada para abordar diferentes aspectos del proceso de recuperación y apoyo tanto para los adictos como para sus familias.
+  </p>
+  <div class="step">
+    <h3>Grupos Virtuales</h3>
+    <p>
+      Los grupos virtuales se llevan a cabo a las 20:00 horas los lunes y jueves. Estos encuentros brindan un espacio seguro y de apoyo para que los adictos puedan compartir sus dolores, impulsos, ansiedades y cómo ha sido su día. Los participantes reciben devoluciones tanto de sus compañeros como de profesionales, facilitando un proceso de recuperación colectiva y personal.
+    </p>
+  </div>
+  <div class="step">
+    <h3>Grupos de Psicoeducación</h3>
+    <p>
+      Los grupos de psicoeducación son sesiones en las que se comparte conciencia de enfermedad y se proporciona un ambiente aúlico para enseñar sobre la adicción. En estos grupos, se busca que los participantes comprendan mejor su condición y adquieran herramientas para manejarla de manera efectiva, fomentando una recuperación informada y consciente.
+    </p>
+  </div>
+  <div class="step">
+    <h3>Terapia Familiar</h3>
+    <p>
+      La terapia familiar se realiza virtualmente los miércoles a las 20:00 horas. Este espacio está diseñado para que los familiares de los adictos puedan explorar las causas de sus propios dolores y comprender cómo estos afectan el ambiente familiar. A través de estas sesiones, se busca fortalecer las relaciones familiares y proporcionar herramientas para un apoyo mutuo más efectivo.
+    </p>
+  </div>
+  <div class="step">
+    <h3>Encuentros Presenciales</h3>
+    <p>
+      Los encuentros presenciales se llevan a cabo una vez al mes y son eventos donde se practica la cortesía, el altruismo y la ayuda mutua. Durante estos encuentros, se realizan actividades terapéuticas diseñadas para fortalecer los vínculos entre los participantes y promover un ambiente de solidaridad y apoyo.
+    </p>
+  </div>
+</section>
+<Carrusel slides={slides} client:visible/>
 
-  <style>
-    .steps-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
-      background-color: #f5f5f5;
-      color: #333;
+<style>
+  .steps-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+
+  .steps-container h2 {
+    color: #336b2a;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .steps-container p {
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .step {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .step h3 {
+    color: #254621;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .step p {
+    text-align: start;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .steps-container h2 {
+      font-size: 28px;
     }
 
-    .step {
-      background-color: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      margin: 20px 0;
-      padding: 20px;
-      max-width: 800px;
-      width: 100%;
+    .steps-container p {
+      font-size: 14px;
     }
 
     .step h3 {
-      color: #2b561a;
-      font-size: 24px;
-      margin-bottom: 10px;
+      font-size: 20px;
     }
 
     .step p {
       font-size: 16px;
-      line-height: 1.5;
     }
-
-    @media (max-width: 768px) {
-      .step h3 {
-        font-size: 20px;
-      }
-
-      .step p {
-        font-size: 14px;
-      }
-    }
-  </style>
+  }
+</style>
