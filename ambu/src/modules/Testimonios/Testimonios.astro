@@ -1,0 +1,68 @@
+---
+interface Testimonio {
+  nombre: string;
+  videoSrc: string;
+}
+
+const arrayTestimonios: Testimonio[] = [
+  { nombre: 'Juan Pérez', videoSrc: '/videos/juan.mp4' },
+  { nombre: 'Ana García', videoSrc: '/videos/ana.mp4' },
+  { nombre: 'Carlos Ruiz', videoSrc: '/videos/carlos.mp4' },
+];
+---
+
+<section id="testimonios" class="testimonios-section">
+  <h2>Testimonios</h2>
+  <div class="testimonios-container">
+    {arrayTestimonios.map((testimonio) => (
+      <div class="testimonio">
+        <h3>Paciente: {testimonio.nombre}</h3>
+        <video controls>
+          <source src={testimonio.videoSrc} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style lang="scss">
+  .testimonios-section {
+    background-color: #f5f5f5;
+    padding: 40px 20px;
+    text-align: center;
+    color: #333;
+
+    h2 {
+      font-size: 32px;
+      color: #2b561a;
+      margin-bottom: 20px;
+    }
+
+    .testimonios-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .testimonio {
+      background-color: #437031;
+      border-radius: 8px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      color: #f5f5f5;
+      
+      h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      video {
+        width: 100%;
+        border-radius: 8px;
+      }
+    }
+  }
+</style>

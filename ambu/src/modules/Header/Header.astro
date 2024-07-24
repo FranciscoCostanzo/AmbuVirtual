@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <header>
@@ -12,40 +13,14 @@
   <nav>
     <div class="menu" id="menu">
       <a href="#tratamiento">Nuestro Tratamiento</a>
-      <!-- <a href="#testimonios">Testimonios</a> -->
+      <a href="#testimonios">Testimonios</a>
       <a href="#nosotros">Sobre Nosotros</a>
       <a id="contacto" href="#contact">Contacto</a>
     </div>
   </nav>
 </header>
 
-<script>
-  function toggleMenu() {
-    var menu = document.getElementById('menu');
-    if (menu.style.display === 'flex') {
-      menu.style.display = 'none';
-    } else {
-      menu.style.display = 'flex';
-    }
-  }
 
-  function handleResize() {
-    var menu = document.getElementById('menu');
-    var hamburger = document.getElementById('hamburger');
-    if (window.innerWidth > 768) {
-      menu.style.display = 'flex';
-      hamburger.style.display = 'none';
-    } else {
-      menu.style.display = 'none';
-      hamburger.style.display = 'flex';
-    }
-  }
-
-  document.getElementById('hamburger').addEventListener('click', toggleMenu);
-  window.addEventListener('resize', handleResize);
-
-  handleResize();
-</script>
 
 <style lang="scss">
   header {
@@ -54,6 +29,8 @@
     padding: 20px;
     padding-top: 25px;
     text-align: center;
+    transition: all 0.3s ease;
+
 
     h1 {
       font-size: 40px;
@@ -68,11 +45,15 @@
     }
 
     nav {
-      display: flex;
-      justify-content: center;
       position: relative;
       .menu {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: nowrap;
         padding: 20px;
+
         a {
           font-size: 20px;
           position: relative;
@@ -102,7 +83,7 @@
           width: 100%;
         }
 
-        #contacto{
+        #contacto {
           display: grid;
           place-items: center;
           text-align: center;
@@ -125,14 +106,15 @@
         #contacto:hover::before {
           width: 0;
         }
-        
       }
     }
   }
 
   @media (max-width: 768px) {
     header {
-      position: relative;
+      position: fixed;
+      z-index: 100;
+      width: 100%;
 
       h2 {
         padding: 10px;
@@ -152,19 +134,23 @@
         div {
           width: 25px;
           height: 2px;
-          background-color: white;
+          background-color: #fff;
           margin: 4px 0;
         }
       }
 
       .menu {
-        display: none;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         width: 100%;
-        background-color: #357b19;
+        background-color: #437031;
         border-radius: 8px;
+        opacity: 0;
+        max-height: 0;
+        transition: all 0.3s ease-in-out;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
         a::before {
           display: none;
@@ -185,13 +171,17 @@
           }
         }
       }
+
+      .active {
+        opacity: 1;
+        max-height: 300px;
+      }
     }
   }
 
   @media (max-width: 420px) {
     header {
-
-      h1{
+      h1 {
         font-size: 26px;
       }
       h2 {
@@ -201,3 +191,54 @@
     }
   }
 </style>
+
+<script>
+  let lastScrollTop = 0;
+  const header = document.querySelector("header");
+  const menu = document.getElementById("menu");
+  const hamburger = document.getElementById("hamburger");
+
+  function toggleMenu() {
+    menu.classList.toggle("active");
+  }
+
+  function handleResize() {
+    if (window.innerWidth > 768) {
+      menu.classList.add("active"); // Asegura que el menú esté visible en pantallas grandes
+      hamburger.style.display = "none"; // Oculta el icono de hamburguesa
+      header.style.top = "0"; // Muestra la barra de navegación
+      header.style.opacity = "1"; // Muestra la barra de navegación
+    } else {
+      menu.classList.remove("active"); // Oculta el menú en pantallas pequeñas por defecto
+      hamburger.style.display = "flex"; // Muestra el icono de hamburguesa
+    }
+  }
+
+  function handleScrollVisible() {
+    if (window.innerWidth <= 768) {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        header.style.top = "-70px"; // Oculta la barra de navegación
+        header.style.opacity = "0"; // Oculta la barra de navegación
+        menu.classList.remove("active");
+      } else {
+        header.style.top = "0"; // Muestra la barra de navegación
+        header.style.opacity = "1"; // Muestra la barra de navegación
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Para Mobile o cuando se llega a la parte superior del documento
+    } else {
+      // Si el ancho del viewport es mayor a 768 píxeles, asegura que el header esté visible
+      header.style.top = "0";
+      header.style.opacity = "1";
+    }
+  }
+
+  hamburger.addEventListener("click", toggleMenu);
+  window.addEventListener("resize", handleResize);
+  window.addEventListener("scroll", handleScrollVisible, { passive: true });
+
+  handleResize(); // Inicializa el estado correcto del menú al cargar la página
+</script>
+
+
+
