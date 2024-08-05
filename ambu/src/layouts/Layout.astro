@@ -37,7 +37,7 @@ const description = "Ambu Virtual, un centro innovador en la rehabilitación de 
   <body class="josefin_sans">
     <slot />
   </body>
-  <style is:global>
+  <style lang="scss" is:global>
     .josefin_sans {
       font-family: "Josefin Sans", sans-serif;
       font-optical-sizing: auto;
@@ -53,6 +53,9 @@ const description = "Ambu Virtual, un centro innovador en la rehabilitación de 
 
     body{
       background-color: #f5f5f5;
+      @media (max-width: 768px){
+        margin-top: 130px;
+      }
     }
   </style>
 </html>

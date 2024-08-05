@@ -1,13 +1,20 @@
 ---
+import felipe from "../../assets/video/Testimonios/FelipeTestimonio.mp4"
+import manzu from "../../assets/video/Testimonios/ManzuTestimonio.mp4"
+import mauri from "../../assets/video/Testimonios/MauriTestimonio.mp4"
+import hector from "../../assets/video/Testimonios/HectorTestimonio.mp4"
+
 interface Testimonio {
   nombre: string;
   videoSrc: string;
 }
 
+
 const arrayTestimonios: Testimonio[] = [
-  { nombre: 'Juan Pérez', videoSrc: '/videos/juan.mp4' },
-  { nombre: 'Ana García', videoSrc: '/videos/ana.mp4' },
-  { nombre: 'Carlos Ruiz', videoSrc: '/videos/carlos.mp4' },
+  { nombre: 'Felipe de Paz', videoSrc: felipe },
+  { nombre: 'Carlos Manzu', videoSrc: manzu },
+  { nombre: 'Mauricio Decunta', videoSrc: mauri },
+  { nombre: 'Hector Patrignani', videoSrc: hector },
 ];
 ---
 
