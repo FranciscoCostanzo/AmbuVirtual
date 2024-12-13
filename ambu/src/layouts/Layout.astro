@@ -4,7 +4,8 @@ interface Props {
 }
 
 const { title } = Astro.props;
-const description = "Ambu Virtual, un centro innovador en la rehabilitación de adicciones con terapias virtuales y presenciales. Apoyo integral para adictos y sus familias. ¡Contáctanos hoy!"
+const description =
+  "Ambu Virtual, un centro innovador en la rehabilitación de adicciones con terapias virtuales y presenciales. Apoyo integral para adictos y sus familias. ¡Contáctanos hoy!";
 ---
 
 <!doctype html>
@@ -13,18 +14,20 @@ const description = "Ambu Virtual, un centro innovador en la rehabilitación de 
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords" content="rehabilitación, adicciones, terapia virtual, apoyo familiar, encuentros presenciales" />
+    <meta
+      name="keywords"
+      content="rehabilitación, adicciones, terapia virtual, apoyo familiar, encuentros presenciales"
+    />
     <meta name="author" content="Ambu Virtual" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.ambuvirtual.com" />
-    <meta property="og:image" content="https://www.ambuvirtual.com/og-image.jpg" />
-    <link
-      rel="shortcut icon"
-      href="./favicon.svg"
-      type="image/x-icon"
+    <meta
+      property="og:image"
+      content="https://www.ambuvirtual.com/og-image.jpg"
     />
+    <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon" />
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -48,13 +51,24 @@ const description = "Ambu Virtual, un centro innovador en la rehabilitación de 
       padding: 0;
       margin: 0;
       box-sizing: border-box;
-  scroll-behavior: smooth;
+      scroll-behavior: smooth;
     }
 
-    body{
+    h2 {
+    color: #336b2a;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+    body {
       background-color: #f5f5f5;
-      @media (max-width: 768px){
-        margin-top: 170px;
+      @media (max-width: 768px) {
+        margin-top: 100px;
       }
     }
   </style>

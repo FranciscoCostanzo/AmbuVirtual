@@ -111,12 +111,12 @@ const Carrusel = ({ slides }) => {
         {slides.map((slide, index) => (
           <section className="contenido-slider" key={index}>
             <div className={`contenedorTxt ${paused ? "pausado" : ""}`}>
-              <h2
+              <h3
                 className={`texto-entrada ${contador === index ? "activo" : ""
                   }`}
               >
                 {slide.content}
-              </h2>
+              </h3>
               <p
                 className={`texto-entrada ${contador === index ? "activo" : ""
                   }`}

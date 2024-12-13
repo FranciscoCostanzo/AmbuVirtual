@@ -20,10 +20,11 @@ const arrayTestimonios: Testimonio[] = [
 
 <section id="testimonios" class="testimonios-section">
   <h2>Testimonios</h2>
+  <p>En nuestro tratamiento, acompañamos tanto a pacientes activos como en recuperación, logrando transformaciones reales en sus vidas. Estos son algunos de sus testimonios, reflejo de su esfuerzo y nuestro compromiso.</p>
   <div class="testimonios-container">
     {arrayTestimonios.map((testimonio) => (
       <div class="testimonio">
-        <h3>Paciente: {testimonio.nombre}</h3>
+        <h3>Paciente: <br> {testimonio.nombre}</h3>
         <video controls>
           <source src={testimonio.videoSrc} type="video/mp4" />
           Your browser does not support the video tag.
@@ -39,11 +40,21 @@ const arrayTestimonios: Testimonio[] = [
     padding: 40px 20px;
     text-align: center;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     h2 {
       font-size: 32px;
       color: #2b561a;
       margin-bottom: 20px;
+    }
+
+    p {
+      max-width: 800px;
+      text-align: center;
+      margin-bottom: 30px;
     }
 
     .testimonios-container {

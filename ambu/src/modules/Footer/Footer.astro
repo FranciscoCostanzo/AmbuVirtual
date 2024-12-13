@@ -1,15 +1,14 @@
 ---
+import { enlaces } from "../../utils.js";
 
 ---
 
 <footer>
   <div class="footer-content">
     <nav class="footer-nav">
-      <a href="#home">Inicio</a>
-      <a href="#tratamiento">Nuestro Tratamiento</a>
-      <!-- <a href="#testimonios">Testimonios</a> -->
-      <a href="#nosotros">Sobre Nosotros</a>
-      <a id="contacto" href="#contact">Contacto</a>
+      {enlaces.map((a) => (
+        <a href={a.href}>{a.texto}</a>
+      ))}
     </nav>
     <div class="contact-info">
       <p>

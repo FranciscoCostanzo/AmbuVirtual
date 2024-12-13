@@ -1,0 +1,86 @@
+---
+import Primero1 from "../../assets/img/encuentros/Primero1.jpg";
+import Primero2 from "../../assets/img/encuentros/Primero2.jpg";
+import Primero3 from "../../assets/img/encuentros/Primero3.jpg";
+import Primero4 from "../../assets/img/encuentros/Primero4.jpg";
+import Quinto1 from "../../assets/img/encuentros/Quinto1.jpg";
+import Quinto2 from "../../assets/img/encuentros/Quinto2.jpg";
+import Quinto3 from "../../assets/img/encuentros/Quinto3.jpg";
+import Segundo1 from "../../assets/img/encuentros/Segundo1.jpg";
+import Segundo2 from "../../assets/img/encuentros/Segundo2.jpg";
+
+const imgEncuentros = [
+  Primero1,
+  Primero2,
+  Primero3,
+  Primero4,
+  Quinto1,
+  Quinto2,
+  Quinto3,
+  Segundo1,
+  Segundo2,
+];
+---
+
+<section id="encuentros">
+  <h2>Encuentros presenciales</h2>
+  <p>
+    Realizamos encuentros presenciales para que todos nuestros pacientes tengan
+    la oportunidad de formar lazos auténticos de recuperación. Fomentamos la
+    hermandad y fraternidad como pilares de nuestro ambulatorio, avanzando
+    juntos hacia un futuro mejor. ¡La recuperación es un camino que recorremos
+    en equipo!
+  </p>
+  <article class="contenedor__galeria">
+    <div class="galeria">
+      {imgEncuentros.map((src) => <img src={src.src} alt="Encuentro" />)}
+    </div>
+  </article>
+</section>
+
+<style lang="scss">
+  #encuentros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+        margin-top: 30px;
+      font-size: 32px;
+      color: #2b561a;
+      margin-bottom: 20px;
+    }
+
+    p {
+      max-width: 800px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .contenedor__galeria {
+      width: 90%;
+      color: #49494985;
+      .galeria {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 40px;
+        img {
+          height: 300px;
+          width: 300px;
+          object-fit: cover;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          transition: all .2s ease;
+
+          &:hover{
+            transform: translateY(-6px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+          }
+        }
+      }
+    }
+  }
+</style>

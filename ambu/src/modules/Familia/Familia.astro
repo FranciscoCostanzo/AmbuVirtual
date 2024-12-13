@@ -1,0 +1,86 @@
+---
+import lore1 from "../../assets/video/Familia/reelLorenaSextoEncuentro2.mp4"
+import lore2 from "../../assets/video/Familia/reelLorenaSextoEncuentro3.mp4"
+import robles1 from "../../assets/video/Familia/reelRoblesSextoEncuentro1.mp4"
+import robles2 from "../../assets/video/Familia/reelRoblesSextoEncuentro2.mp4"
+
+interface Testimonio {
+  nombre: string;
+  videoSrc: string;
+}
+
+
+const arrayTestimonios: Testimonio[] = [
+  { nombre: 'Lorena Mabel Apella', videoSrc: lore1 },
+  { nombre: 'Carlos Robles Gorriti', videoSrc: robles1 },
+  { nombre: 'Lorena Mabel Apella', videoSrc: lore2 },
+  { nombre: 'Carlos Robles Gorriti', videoSrc: robles2 },
+];
+---
+
+<section id="familia" class="testimonios-section">
+  <h2>Familia</h2>
+  <p>Lorena Mabel Apella, Karina Carreras y el Dr. Carlos Robles Gorriti, destacadas especialistas en coadicción, abordan el rol fundamental de las familias en el tratamiento de la adicción virtual. Su enfoque combina herramientas terapéuticas y estrategias prácticas para guiar a las familias en el proceso de acompañar y sanar junto a sus seres queridos, fortaleciendo vínculos y promoviendo cambios positivos. Este video explora cómo la coadicción impacta a las familias y cómo su involucramiento puede ser clave para el éxito del tratamiento.</p>
+  <div class="testimonios-container">
+    {arrayTestimonios.map((testimonio) => (
+      <div class="testimonio">
+        <h3>Profesional: <br> {testimonio.nombre}</h3>
+        <video controls>
+          <source src={testimonio.videoSrc} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style lang="scss">
+  .testimonios-section {
+    background-color: #f5f5f5;
+    padding: 40px 20px;
+    text-align: center;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+      font-size: 32px;
+      color: #2b561a;
+      margin-bottom: 20px;
+    }
+
+    p {
+      max-width: 800px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .testimonios-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .testimonio {
+      background-color: #437031;
+      border-radius: 8px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      color: #f5f5f5;
+      
+      h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      video {
+        width: 100%;
+        border-radius: 8px;
+      }
+    }
+  }
+</style>
