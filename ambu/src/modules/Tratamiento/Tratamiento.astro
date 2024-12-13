@@ -34,12 +34,13 @@ const slides = [
   <div class="step">
     <h3>Grupos Virtuales</h3>
     <p>
-      Los grupos virtuales se llevan a cabo a las 20:00 horas los lunes y
-      jueves. Estos encuentros brindan un espacio seguro y de apoyo para que los
-      adictos puedan compartir sus dolores, impulsos, ansiedades y cómo ha sido
-      su día. Los participantes reciben devoluciones tanto de sus compañeros
-      como de profesionales, facilitando un proceso de recuperación colectiva y
-      personal.
+      Los grupos virtuales se llevan a cabo los <strong>lunes, martes, jueves y viernes
+      a las 20:00 horas, y los miércoles a las 11:00 horas</strong>. Estos encuentros
+      brindan un espacio seguro y de apoyo para que las personas con adicciones
+      puedan compartir sus dolores, impulsos, ansiedades y cómo ha sido su día.
+      Los participantes reciben retroalimentación tanto de sus compañeros como
+      de los profesionales, facilitando un proceso de recuperación tanto
+      colectiva como personal.
     </p>
   </div>
   <div class="step">
@@ -53,7 +54,7 @@ const slides = [
     </p>
   </div>
   <div class="step">
-    <h3>Terapia Familiar</h3>
+    <a href="#familia">Terapia Familiar</a>
     <p>
       La terapia familiar se realiza virtualmente los miércoles a las 20:00
       horas. Este espacio está diseñado para que los familiares de los adictos
@@ -64,7 +65,8 @@ const slides = [
     </p>
   </div>
   <div class="step">
-    <h3>Encuentros Presenciales</h3>
+    <a href="#encuentros">Encuentros Presenciales</a>
+    <h3></h3>
     <p>
       Los encuentros presenciales se llevan a cabo una vez al mes y son eventos
       donde se practica la cortesía, el altruismo y la ayuda mutua. Durante
@@ -110,10 +112,12 @@ const slides = [
     width: 100%;
   }
 
-  .step h3 {
+  .step h3,
+  a {
     color: #254621;
     font-size: 24px;
     margin-bottom: 10px;
+    font-weight: bold;
   }
 
   .step p {

@@ -10,6 +10,14 @@ import video from "../../assets/video/Fondo.mp4";
     del pais
   </p>
 </div>
+<div class="video__no_psi">
+  <p>
+    No brindamos tratamiento psicológico ni psiquiátrico. Aclaramos esto, ya que
+    podría prestarse a confusión. Solo ofrecemos grupos de autoayuda y un
+    espacio confiable en el que se puede confiar plenamente.
+  </p>
+  <video src=""></video>
+</div>
 <section>
   <video autoplay loop muted>
     <source src={video} type="video/mp4" />
@@ -42,6 +50,28 @@ import video from "../../assets/video/Fondo.mp4";
     p {
       font-size: 18px;
       width: 70%;
+    }
+  }
+
+  .video__no_psi{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    color: #336b2a;
+    p{
+      border-radius: 8px;
+      border: 1px solid;
+      font-size: 20px;
+      font-weight: bold;
+      max-width: 800px;
+      padding: 16px;
+    }
+
+    video{
+
     }
   }
   section {
