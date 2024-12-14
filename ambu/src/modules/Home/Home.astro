@@ -15,9 +15,9 @@ import PSI from "../../assets/video/Home/audo_enhanced_VideoDeskPSI.mp4";
   <p>
     No brindamos tratamiento psicológico ni psiquiátrico. Aclaramos esto, ya que
     podría prestarse a confusión. Solo ofrecemos grupos de autoayuda y un
-    espacio confiable en el que se puede confiar plenamente.
+    espacio confiable para que los pacientes puedan llevar a cabo su recuperación.
   </p>
-  <video autoplay loop muted>
+  <video  autoplay loop controls>
     <source src={PSI} type="video/mp4" />
     Tu navegador no soporta la etiqueta de video.
   </video>
@@ -64,17 +64,34 @@ import PSI from "../../assets/video/Home/audo_enhanced_VideoDeskPSI.mp4";
     text-align: center;
     flex-direction: column;
     width: 100%;
-    color: #336b2a;
+    color: #2b561a;
+    gap: 30px;
     p{
       border-radius: 8px;
       border: 1px solid;
       font-size: 20px;
       font-weight: bold;
-      max-width: 800px;
       padding: 16px;
+      background-color: #2b561a;
+      color: #fff;
+      @media (max-width: 768px) {
+      max-width: 350px;
+      font-size: 18px;
+      padding: 10px;
+
+      }
     }
 
     video{
+      width: 60%;
+      margin-bottom: 30px;
+      border-radius: 30px;
+      border: 5px solid;
+
+      @media (max-width: 768px) {
+      width: 95%;
+
+      }
 
     }
   }
