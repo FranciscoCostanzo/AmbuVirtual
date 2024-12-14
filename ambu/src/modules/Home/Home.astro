@@ -1,5 +1,6 @@
 ---
-import video from "../../assets/video/Fondo.mp4";
+import video from "../../assets/video/Home/Fondo.mp4";
+import PSI from "../../assets/video/Home/audo_enhanced_VideoDeskPSI.mp4";
 ---
 
 <div id="home">
@@ -16,7 +17,10 @@ import video from "../../assets/video/Fondo.mp4";
     podría prestarse a confusión. Solo ofrecemos grupos de autoayuda y un
     espacio confiable en el que se puede confiar plenamente.
   </p>
-  <video src=""></video>
+  <video autoplay loop muted>
+    <source src={PSI} type="video/mp4" />
+    Tu navegador no soporta la etiqueta de video.
+  </video>
 </div>
 <section>
   <video autoplay loop muted>
