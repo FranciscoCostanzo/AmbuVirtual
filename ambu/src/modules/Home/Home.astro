@@ -13,11 +13,11 @@ import PSI from "../../assets/video/Home/audo_enhanced_VideoDeskPSI.mp4";
 </div>
 <div class="video__no_psi">
   <p>
-    No brindamos tratamiento psicológico ni psiquiátrico. Aclaramos esto, ya que
-    podría prestarse a confusión. Solo ofrecemos grupos de autoayuda y un
-    espacio confiable para que los pacientes puedan llevar a cabo su recuperación.
+    Este es un tratamiento con grupos de autoayuda, terapia familiar y talleres
+    de gestión de emociones, que complementa los tratamientos psicológicos y
+    psiquiátricos con los que llegue el paciente
   </p>
-  <video  autoplay loop controls>
+  <video autoplay loop controls>
     <source src={PSI} type="video/mp4" />
     Tu navegador no soporta la etiqueta de video.
   </video>
@@ -53,11 +53,10 @@ import PSI from "../../assets/video/Home/audo_enhanced_VideoDeskPSI.mp4";
     }
     p {
       font-size: 18px;
-      width: 70%;
     }
   }
 
-  .video__no_psi{
+  .video__no_psi {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,7 +65,7 @@ import PSI from "../../assets/video/Home/audo_enhanced_VideoDeskPSI.mp4";
     width: 100%;
     color: #2b561a;
     gap: 30px;
-    p{
+    p {
       border-radius: 8px;
       border: 1px solid;
       font-size: 20px;
@@ -74,25 +73,24 @@ import PSI from "../../assets/video/Home/audo_enhanced_VideoDeskPSI.mp4";
       padding: 16px;
       background-color: #2b561a;
       color: #fff;
-      @media (max-width: 768px) {
-      max-width: 350px;
-      font-size: 18px;
-      padding: 10px;
+      max-width: 70%;
 
+      @media (max-width: 768px) {
+        max-width: 350px;
+        font-size: 18px;
+        padding: 10px;
       }
     }
 
-    video{
+    video {
       width: 60%;
       margin-bottom: 30px;
       border-radius: 30px;
       border: 5px solid;
 
       @media (max-width: 768px) {
-      width: 95%;
-
+        width: 95%;
       }
-
     }
   }
   section {
