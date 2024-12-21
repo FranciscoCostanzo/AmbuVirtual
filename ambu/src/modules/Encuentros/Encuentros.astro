@@ -1,25 +1,44 @@
 ---
-import Primero1 from "../../assets/img/encuentros/Primero1.webp";
-import Primero2 from "../../assets/img/encuentros/Primero2.webp";
-import Primero3 from "../../assets/img/encuentros/Primero3.webp";
-import Primero4 from "../../assets/img/encuentros/Primero4.webp";
-import Quinto1 from "../../assets/img/encuentros/Quinto1.webp";
-import Quinto2 from "../../assets/img/encuentros/Quinto2.webp";
-import Quinto3 from "../../assets/img/encuentros/Quinto3.webp";
-import Segundo1 from "../../assets/img/encuentros/Segundo1.webp";
-import Segundo2 from "../../assets/img/encuentros/Segundo2.webp";
+import Primero1 from "../../assets/img/encuentros/1/Primero1.webp";
+import Primero2 from "../../assets/img/encuentros/1/Primero2.webp";
+import Primero3 from "../../assets/img/encuentros/1/Primero3.webp";
+import Primero4 from "../../assets/img/encuentros/1/Primero4.webp";
 
-const imgEncuentros = [
-  Primero1,
-  Primero2,
-  Primero3,
-  Primero4,
-  Quinto1,
-  Quinto2,
-  Quinto3,
-  Segundo1,
-  Segundo2,
+import Segundo1 from "../../assets/img/encuentros/2/Segundo1.webp";
+import Segundo2 from "../../assets/img/encuentros/2/Segundo2.webp";
+
+import Tercero1 from "../../assets/img/encuentros/3/Tercero1.webp";
+import Tercero2 from "../../assets/img/encuentros/3/Tercero2.webp";
+import Tercero3 from "../../assets/img/encuentros/3/Tercero3.webp";
+
+import Cuarto1 from "../../assets/img/encuentros/4/Cuarto1.webp";
+import Cuarto2 from "../../assets/img/encuentros/4/Cuarto2.webp";
+import Cuarto3 from "../../assets/img/encuentros/4/Cuarto3.webp";
+import Cuarto4 from "../../assets/img/encuentros/4/Cuarto4.webp";
+
+import Quinto1 from "../../assets/img/encuentros/5/Quinto1.webp";
+import Quinto2 from "../../assets/img/encuentros/5/Quinto2.webp";
+import Quinto3 from "../../assets/img/encuentros/5/Quinto3.webp";
+
+import Sexto1 from "../../assets/img/encuentros/6/Sexto1.webp";
+import Sexto2 from "../../assets/img/encuentros/6/Sexto2.webp";
+import Sexto3 from "../../assets/img/encuentros/6/Sexto3.webp";
+
+import Septimo1 from "../../assets/img/encuentros/7/Septimo1.webp";
+import Septimo2 from "../../assets/img/encuentros/7/Septimo2.webp";
+import Septimo3 from "../../assets/img/encuentros/7/Septimo3.webp";
+import Septimo4 from "../../assets/img/encuentros/7/Septimo4.webp";
+
+const encuentrosData = [
+  { title: "Primer Encuentro", images: [Primero1, Primero2, Primero3, Primero4] },
+  { title: "Segundo Encuentro", images: [Segundo1, Segundo2] },
+  { title: "Tercer Encuentro", images: [Tercero1, Tercero2, Tercero3] },
+  { title: "Cuarto Encuentro", images: [Cuarto1, Cuarto2, Cuarto3, Cuarto4] },
+  { title: "Quinto Encuentro", images: [Quinto1, Quinto2, Quinto3] },
+  { title: "Sexto Encuentro", images: [Sexto1, Sexto2, Sexto3] },
+  { title: "Séptimo Encuentro", images: [Septimo1, Septimo2, Septimo3, Septimo4] },
 ];
+
 ---
 
 <section id="encuentros">
@@ -32,9 +51,16 @@ const imgEncuentros = [
     en equipo!
   </p>
   <article class="contenedor__galeria">
-    <div class="galeria">
-      {imgEncuentros.map((src) => <img src={src.src} alt="Encuentro" />)}
-    </div>
+    {encuentrosData.map((encuentro) => (
+      <div key={encuentro.title} class="encuentro">
+        <h4>{encuentro.title}</h4>
+        <div class="galeria">
+          {encuentro.images.map((src, index) => (
+            <img key={index} src={src.src} alt={`Imagen de ${encuentro.title}`} />
+          ))}
+        </div>
+      </div>
+    ))}
   </article>
 </section>
 
@@ -46,7 +72,7 @@ const imgEncuentros = [
     justify-content: center;
 
     h2 {
-        margin-top: 30px;
+      margin-top: 30px;
       font-size: 32px;
       color: #2b561a;
       margin-bottom: 20px;
@@ -61,23 +87,36 @@ const imgEncuentros = [
     .contenedor__galeria {
       width: 90%;
       color: #49494985;
-      .galeria {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        gap: 40px;
-        img {
-          height: 300px;
-          width: 300px;
-          object-fit: cover;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          transition: all .2s ease;
 
-          &:hover{
-            transform: translateY(-6px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      .encuentro {
+        margin-bottom: 40px;
+
+        h4 {
+          font-size: 24px;
+          color: #2b561a;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+
+        .galeria {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          gap: 40px;
+
+          img {
+            height: 300px;
+            width: 300px;
+            object-fit: cover;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+
+            &:hover {
+              transform: translateY(-6px);
+              box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            }
           }
         }
       }
